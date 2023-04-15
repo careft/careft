@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>.warning {
+        border: 10px ridge rgb(20, 19, 19);
+        background-color: rgba(235, 235, 224, 0.682);
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .warning img {
+        width: 40%;
+        
+    }
+    
+    .warning p {
+        font: small-caps bold 1.2rem sans-serif;
+        text-align: center;
+        
+    }
+    .box {
+  background-image:url(/.jpg);
+  border-radius: 5px;
+  width: 5px;
+  height: 100px;
+}
+
+.box:hover {
+  animation-name: rotate;
+  animation-duration: 10s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Classes that will show or hide the
+   three back faces of the "cube" */
+   .showbf div {
+  backface-visibility: visible;
+}
+
+.hidebf div {
+  backface-visibility: hidden;
+}
+
+/* Define the container div, the cube div, and a generic face */
+.container {
+  width: 150px;
+  height: 150px;
+  margin: 75px 0 0 75px;
+  border: none;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  perspective: 550px;
+  perspective-origin: 150% 150%;
+  transform-style: preserve-3d;
+}
+
+.face {
+  display: block;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: none;
+  line-height: 100px;
+  font-family: sans-serif;
+  font-size: 60px;
+  color: white;
+  text-align: center;
+}
+
+/* Define each face based on direction */
+.front {
+  background: rgba(0, 0, 0, 0.3);
+  transform: translateZ(50px);
+}
+
+.back {
+  background: rgba(0, 255, 0, 1);
+  color: black;
+  transform: rotateY(180deg) translateZ(50px);
+}
+
+.right {
+  background: rgba(196, 0, 0, 0.7);
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+.left {
+  background: rgba(0, 0, 196, 0.7);
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+.top {
+  background: rgba(196, 196, 0, 0.7);
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+.bottom {
+  background: rgba(196, 0, 196, 0.7);
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+/* Make the table a little nicer */
+th,
+p,
+td {
+  background-color: #eeeeee;
+  margin: 0px;
+  padding: 6px;
+  font-family: sans-serif;
+  text-align: left;
+  
+}
+p {
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: 3;
+  animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  75% {
+    font-size: 300%;
+    margin-left: 25%;
+    width: 150%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+.multi-bg-example {
+  width: 100%;
+  height: 400px;
+  background-image: url(firefox.png), url(/me.jpg), linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: bottom right, left, right;
+}
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    
+    
+    <div class="warning">
+        <img src="/.jpg"
+             alt="An intimidating leopard.">
+        <p>home shop exsample</p>
+        <div class="box"></div>
+        <div class="container">
+            <div class="box">
+              
+            </div>
+           
+            <div class="multi-bg-example"></div>
+          </div><div class="shadowbox">
+            <div style="background: #ac161b; border: 2px solid #151414;">
+              <p style="margin: 15px; line-height: 1.5; text-align: center;">
+                  Well, I am the slime from your video<br>
+                  Oozin' along on your livin' room floor.</p>
+          </div>
+            
+          </div><div>
+            <h1 id="watchme">Watch me move</h1>
+            <ul id="output"></ul>
+            <p>
+              Any kind of content here. Such as &lt;p&gt;, &lt;table&gt;. You name it!
+            </p>
+          </div>
+          <table>
+            <tr>
+              <th><code>backface-visibility: visible;</code></th>
+              <th><code>backface-visibility: hidden;</code></th>
+            </tr>
+            <tr>
+              <td>
+                <div class="container">
+                  <div class="cube showbf">
+                    <div class="face front">1</div>
+                    <div class="face back">2</div>
+                    <div class="face right">3</div>
+                    <div class="face left">4</div>
+                    <div class="face top">5</div>
+                    <div class="face bottom">6</div>
+                  </div>
+                </div>
+                <p>
+                  Since all faces are partially transparent, the back faces (2, 4, 5) are
+                  visible through the front faces (1, 3, 6).
+                </p>
+              </td>
+              <td>
+                <div class="container">
+                  <div class="cube hidebf">
+                    <div class="face front">1</div>
+                    <div class="face back">2</div>
+                    <div class="face right">3</div>
+                    <div class="face left">4</div>
+                    <div class="face top">5</div>
+                    <div class="face bottom">6</div>
+                  </div>
+                </div>
+                <p>The three back faces (2, 4, 5) are hidden.</p>
+              </td>
+            </tr>
+          </table>
+    </div>
+    
+    
+ <script>const element = document.getElementById("watchme");
+  element.addEventListener("animationstart", listener, false);
+  element.addEventListener("animationend", listener, false);
+  element.addEventListener("animationiteration", listener, false);
+  
+  element.className = "slidein";
+  function listener(event) {
+  const l = document.createElement("li");
+  switch (event.type) {
+    case "animationstart":
+      l.textContent = `Started: elapsed time is ${event.elapsedTime}`;
+      break;
+    case "animationend":
+      l.textContent = `Ended: elapsed time is ${event.elapsedTime}`;
+      break;
+    case "animationiteration":
+      l.textContent = `New loop started at time ${event.elapsedTime}`;
+      break;
+  }
+  document.getElementById("output").appendChild(l);
+}</script>   
+</body> 
+</html>
